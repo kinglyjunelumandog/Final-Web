@@ -1,81 +1,109 @@
+<!-- src/components/Navbar.vue -->
+<script setup>
+import { RouterLink } from 'vue-router'
+import logoImg from '@/assets/logo.jpg'
+</script>
+
 <template>
-  <nav class="navbar">
-    <div class="nav-brand">
-      <RouterLink to="/#hero">
-        <img src="@/assets/Logo.png" alt="CPU Logo" class="nav-logo" />
+  <header class="navbar-header">
+    <div class="navbar-container">
+      <RouterLink to="/" class="navbar-brand">
+        <img :src="logoImg" alt="CPU Warriors Logo" class="brand-logo" />
         <div class="brand-text">
-          <span class="brand-title">CPU CCS</span>
-          <span class="brand-subtitle">Computer Science Department</span>
+          <span class="brand-title">CPU Warriors</span>
+          <span class="brand-subtitle">College of Computer Studies</span>
         </div>
       </RouterLink>
+
+      <nav class="navbar-nav">
+        <RouterLink to="/" class="nav-link">Home</RouterLink>
+        <RouterLink to="/#about" class="nav-link">About College</RouterLink>
+        <RouterLink to="/#programs" class="nav-link">Programs Offered</RouterLink>
+        <RouterLink to="/#faculty" class="nav-link">Faculty & Staff</RouterLink>
+        <RouterLink to="/#news" class="nav-link">News & Events</RouterLink>
+        <RouterLink to="/#partnerships" class="nav-link">Partnerships</RouterLink>
+        <RouterLink to="/#contact" class="nav-link contact-btn">Contact Us</RouterLink>
+      </nav>
     </div>
-    <ul class="nav-links">
-      <li><RouterLink to="/#hero">Home</RouterLink></li>
-     <li><RouterLink to="/#about">About</RouterLink></li>
-      <li><RouterLink to="/#programs">Programs Offered</RouterLink></li>
-      <li><RouterLink to="/#faculty">Faculty & Staff</RouterLink></li>
-      <li><RouterLink to="/#partnerships">Partnerships</RouterLink></li>
-      <li><RouterLink to="/#news-events">News, Events, and Announcements</RouterLink></li>
-      <li><RouterLink to="/#contact">Contact Us</RouterLink></li>
-      
-      
-    </ul>
-  </nav>
+  </header>
 </template>
 
 <style scoped>
-.navbar {
-  position: fixed;
+.navbar-header {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
+  background-color: #0b0f19;
+  border-bottom: 1px solid #1e293b;
+  width: 100%;
 }
-.nav-brand a {
+
+.navbar-container {
+  width: 100%;
+  padding: 0.75rem 2rem; /* Adjusted padding to push logo to the left edge */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
 }
-.nav-logo {
+
+.brand-logo {
   width: 40px;
   height: 40px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
 }
+
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
 }
+
 .brand-title {
-  font-weight: bold;
-  color: #004d40;
   font-size: 1rem;
-}
-.brand-subtitle {
-  font-size: 0.75rem;
-  color: #555;
-  font-weight: 500;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.nav-links a:hover {
+  font-weight: 700;
   color: #ffffff;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.contact-btn {
+  background-color: #ffffff;
+  color: #0f172a !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.contact-btn:hover {
+  background-color: #e2e8f0;
 }
 </style>

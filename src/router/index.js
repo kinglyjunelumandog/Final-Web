@@ -1,26 +1,53 @@
+// src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../views/homepage.vue'
-import BSITView from '../views/BSITView.vue'
-import BSCSView from '../views/BSCSView.vue'
-import BSDMIAView from '../views/BSDMIAView.vue'
-import BLISView from '../views/BLISView.vue'
-import NewsEventsView from '../components/NewsEventsView.vue'
+import HomeView from '../views/HomeView.vue'
+
+// Import program detail views using relative paths
+import BsitView from '../views/programs/BsitView.vue'
+import BscsView from '../views/programs/BscsView.vue'
+import BsdmiaView from '../views/programs/BsdmiaView.vue'
+import BlisView from '../views/programs/BlisView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: HomePage },
-    { path: '/program/bsit', name: 'bsit', component: BSITView },
-    { path: '/program/bscs', name: 'bscs', component: BSCSView },
-    { path: '/program/bsdmia', name: 'bsdmia', component: BSDMIAView },
-    { path: '/program/blis', name: 'blis', component: BLISView },
-    { path: '/news-events-announcements', name: 'news-events', component: NewsEventsView }
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/programs/bsit',
+      name: 'bsit',
+      component: BsitView
+    },
+    {
+      path: '/programs/bscs',
+      name: 'bscs',
+      component: BscsView
+    },
+    {
+      path: '/programs/bsdmia',
+      name: 'bsdmia',
+      component: BsdmiaView
+    },
+    {
+      path: '/programs/blis',
+      name: 'blis',
+      component: BlisView
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' }
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
     }
-    return savedPosition || { top: 0 }
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0, behavior: 'smooth' }
   }
 })
 

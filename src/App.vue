@@ -1,18 +1,32 @@
-<script setup>
-import Navbar from './components/navbar.vue'
+<script setup lang="ts">
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <Navbar />
-  <RouterView />
+  <div class="app-layout">
+    <Navbar />
+    <main class="main-content">
+      <RouterView />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <style>
-html {
-  scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+}
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>

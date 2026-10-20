@@ -1,83 +1,68 @@
+<!-- src/components/HeroSection.vue -->
+<script setup lang="ts">
+defineProps<{
+  title: string
+  subtitle: string
+}>()
+</script>
+
 <template>
-  <section id="hero" class="hero-wrapper">
-    <div class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1>College of Computer Studies</h1>
-        <p>Shaping future innovators, developers, and tech leaders at Central Philippine University.</p>
-      </div>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>{{ title }}</h1>
+      <p>{{ subtitle }}</p>
     </div>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-.hero-wrapper {
+.hero-section {
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #ffff; 
-  padding: 0; /* Removed padding so it touches screen edges */
-  box-sizing: border-box; 
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Fills the entire vertical screen height */
-  background-image: url('@/assets/warrior.jpg');
-  background-size: cover;
+  min-height: 520px;
+  background-image: url('@/assets/Hero.jpg');
   background-position: center;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  color: #ffffff;
+  padding: 4rem 1rem;
 }
 
-.hero-overlay {
+.hero-section::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  padding: 0 2rem;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-content p {
   font-size: 1.25rem;
-  color: #E4A945;
-  color: #E4A945;
-  font-family: "Roboto", Sans-serif;
-  font-weight: 900;
-  line-height: 1.6;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
+  font-weight: 500;
+  color: #e2e8f0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 </style>
