@@ -1,8 +1,7 @@
-// src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-// Import program detail views using relative paths
+
 import BsitView from '../views/programs/BsitView.vue'
 import BscsView from '../views/programs/BscsView.vue'
 import BsdmiaView from '../views/programs/BsdmiaView.vue'

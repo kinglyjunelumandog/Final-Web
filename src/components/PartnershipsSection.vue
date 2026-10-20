@@ -26,7 +26,6 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-/* Added dark text color for the section title */
 .section h2 {
   color: #1e293b;
   font-size: 2rem;

@@ -1,4 +1,3 @@
-<!-- src/components/ContactSection.vue -->
 <script setup>
 import { ref } from 'vue'
 

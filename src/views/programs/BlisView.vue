@@ -1,5 +1,4 @@
-<!-- src/views/programs/BlisView.vue -->
-<script setup>
+ <script setup>
 import { RouterLink } from 'vue-router'
 
 import programImage from '@/assets/BLIS.png'

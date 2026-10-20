@@ -1,4 +1,3 @@
-<!-- src/views/programs/BsdmiaView.vue -->
 <script setup>
 import { RouterLink } from 'vue-router'
 

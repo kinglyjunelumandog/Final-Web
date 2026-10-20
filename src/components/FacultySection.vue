@@ -1,4 +1,3 @@
-<!-- src/components/FacultySection.vue -->
 <script setup>
 import { ref, computed } from 'vue'
 import quijanoImg from '@/assets/quijano.png'
@@ -135,9 +134,9 @@ function setFilter(filterName) {
 }
 .dean-img-box, .faculty-avatar {
   width: 100%;
-  height: 280px; /* Increased height slightly for a better fit */
+  height: 280px;
   overflow: hidden;
-  background: #f8fafc; /* Neutral background to fill empty spaces */
+  background: #f8fafc; 
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -146,7 +145,7 @@ function setFilter(filterName) {
 .dean-img-box img, .fac-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensures the entire image is displayed without cropping */
+  object-fit: contain; 
 }
 .dean-card-single h3, .faculty-card h3 {
   font-size: 0.95rem;

@@ -1,4 +1,3 @@
-<!-- src/views/programs/BsitView.vue -->
 <script setup>
 import { RouterLink } from 'vue-router'
 import programImage from '@/assets/BSIT.png'
@@ -17,7 +16,7 @@ import programImage from '@/assets/BSIT.png'
         </p>
       </div>
 
-      <!-- Image Section inside the page -->
+      
       <div class="program-image-section">
         <template v-if="programImage">
           <img :src="programImage" alt="BSIT Program Image" class="program-detail-img" />
@@ -29,7 +28,7 @@ import programImage from '@/assets/BSIT.png'
         </template>
       </div>
 
-      <!-- Program Content / Details Section -->
+      
       <div class="program-details">
         <h2>Program Overview</h2>
         <p>
